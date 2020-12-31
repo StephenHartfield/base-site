@@ -10,7 +10,7 @@ const AppStyled = styled.div`
     align-items: center;
     height: 30px;
 `;
-
+// Chicken
 export default function App(props) {
 
     return (
