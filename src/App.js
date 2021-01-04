@@ -1,30 +1,40 @@
 import './App.css';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Col, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from './pages/Home';
+import About from './pages/About';
+import Navigation from './Navigation';
 
-const AppStyled = styled.div`
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
+const OuterContainer = styled.div`
+`;
+
+const StyledContainer = styled(Container)`
+    background-color: #F0F8FF;
+    min-height: 1000px;
 `;
 
 export default function App(props) {
 
     return (
-        <div>
-            <div style={{ width: '100%', height: '500px', backgroundColor: 'lightgray' }}></div>
-            <Row>
-                <Col md={1}></Col>
-                <Col md={5}>
-                    <div style={{width: '90%', height: '300px', backgroundColor: 'lightblue', margin: '0 auto'}}></div>
-                </Col>
-                <Col md={4}>
-                    <div style={{width: '90%', height: '300px', backgroundColor: 'red', margin: '0 auto'}}></div>
-                </Col>
-            </Row>
-        </div>  
+        <Router>
+            <OuterContainer>
+                <Navigation />
+
+                {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+                <StyledContainer>
+                    <Switch>
+                        <Route path="/about">
+                            <About />
+                        </Route>
+                        <Route path="/">
+                            <Home />
+                        </Route>
+                    </Switch>
+                </StyledContainer>
+            </OuterContainer>
+        </Router>
     )
 }
