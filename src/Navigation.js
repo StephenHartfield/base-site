@@ -18,7 +18,7 @@ export default function Navigation(props) {
                     </Nav.Link>
                     <Nav.Link>
                         <Link to='/about'>
-                            About
+                            About Us
                                 </Link>
                     </Nav.Link>
                 </Nav>
