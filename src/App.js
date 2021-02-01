@@ -1,11 +1,13 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from './pages/Home';
 import About from './pages/About';
 import Navigation from './Navigation';
+import Events from './pages/Events';
+import firebase from './firebaseInit';
 
 const OuterContainer = styled.div`
 `;
@@ -16,6 +18,10 @@ const StyledContainer = styled(Container)`
 `;
 
 export default function App(props) {
+
+    useEffect(() => {
+        console.log(firebase);
+    }, [])
 
     return (
         <Router>
@@ -29,6 +35,13 @@ export default function App(props) {
                         <Route path="/about">
                             <About />
                         </Route>
+                        <Route path="/home">
+                            <Home />
+                        </Route>
+                        <Route path="/events">
+                            <Events />
+                        </Route>
+                        
                         <Route path="/">
                             <Home />
                         </Route>

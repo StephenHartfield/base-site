@@ -11,15 +11,20 @@ export default function Navigation(props) {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav>
-                    <Nav.Link href="#deets">
-                        <Link to='/'>
+                    <Nav.Link href="">
+                        <Link to='/home'>
                             Home
-                                </Link>
+                        </Link>
                     </Nav.Link>
                     <Nav.Link>
                         <Link to='/about'>
                             About Us
-                                </Link>
+                        </Link>
+                    </Nav.Link>
+                    <Nav.Link>
+                        <Link to='/events'>
+                            Events
+                        </Link>
                     </Nav.Link>
                 </Nav>
             </Navbar.Collapse>
